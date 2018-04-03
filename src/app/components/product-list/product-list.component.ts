@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../domain/product';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -10,22 +11,17 @@ export class ProductListComponent implements OnInit {
 
   data: Product[];
 
-  constructor() {
+  constructor(private _service : ProductService) { // Déclarer uen dépendance sur le service
 
 
 
-  this.data = [
-
-    {code: 'P100', libelle: 'cafe', prixUnitaire: 500 },
-    {code: 'P200', libelle: 'The', prixUnitaire: 300 },
-    {code: 'P300', libelle: 'Jus orange', prixUnitaire: 700 },
-    {code: 'P400', libelle: 'SHIPS', prixUnitaire: 800 }
-  ];
 
 
   }
 
   ngOnInit() {
+
+    this.data = this._service.getProducts();
   }
 
 }
