@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 
-import {RouterModule ,Routes} from '@angular/router';
+
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -12,7 +12,9 @@ import { ProductService } from './services/product.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { RoutingModule } from './routing-module/routing.module';
 
+/*
 const appRoutes: Routes = [
 
   { path: 'welcome', component: WelcomeComponent },
@@ -20,7 +22,7 @@ const appRoutes: Routes = [
   { path: '', component: WelcomeComponent , pathMatch: 'full'},
   { path: '**', component: NotFoundComponent }
 ];
-
+*/
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +37,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RoutingModule
   ],
   providers: [
   ProductService
